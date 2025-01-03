@@ -1,0 +1,72 @@
+@use 'variables' as vars;
+
+* {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0;
+}
+
+// HOME
+.card-title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: auto;
+    letter-spacing: 0;
+    color: vars.$white-1;
+}
+
+.card-artist {
+    font-size: 13px;
+    line-height: auto;
+    color: vars.$white-1;
+    opacity: 75.28%
+}
+
+// DETAIL
+.art-title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0;
+    color: vars.$black-1;
+}
+
+.art-artist {
+    font-size: 15px;
+    line-height: auto;
+    letter-spacing: 0;
+    color: vars.$black-2;
+}
+
+.art-description {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0;
+    color: vars.$black-2;
+}
+
+.art-year {
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 100px;
+    letter-spacing: 0;
+}
+
+// SLIDESHOW NAV
+.slideshow-title {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: auto;
+    letter-spacing: 0;
+    color: vars.$black-1;
+}
+
+.slideshow-artist {
+    font-size: 10px;
+    line-height: auto;
+    letter-spacing: 0;
+    color: vars.$black-1;
+    opacity: 75.28%;
+}
