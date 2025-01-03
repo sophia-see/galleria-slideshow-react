@@ -1,0 +1,8 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as mixins;
+
+.container {
+    @include mixins.flex-column(start, start, 24px);
+    margin: 24px auto;
+    width: fit-content;
+}

@@ -1,0 +1,31 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as mixins;
+
+.container {
+    @include mixins.flex-row(center, space-between, 0);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid vars.$black-3;
+    padding: 17px 24px;
+}
+
+.controls {
+    @include mixins.flex-row(start, start, 23px);
+}
+
+button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 15%;
+}
