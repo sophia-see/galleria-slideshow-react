@@ -12,9 +12,13 @@ export default function Art () {
     const art = ART_DATA[artIndex];
 
     React.useEffect(() => {
-        setTimeout(() => {
+        const timeout = setTimeout(() => {
             navigate(`/art/${ART_DATA[(artIndex + 1) % ART_DATA.length].name.toLowerCase()}`);
         }, 5000);
+
+        return () => {
+            clearTimeout(timeout); // Clean up
+        };
     }, [art]);
 
     return (

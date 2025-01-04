@@ -17,21 +17,19 @@ export default function SlideshowControls ({ title, artist, artIndex }: Slidesho
     const isLast = artIndex === ART_DATA.length - 1;
     const [animate, setAnimate] = React.useState(false);
 
-    React.useEffect(() => {
-        console.log('Title changed, resetting animation');
-    
+    const resetAnimation = () => {
         setAnimate(false); // Reset animation class
-        const timeout = setTimeout(() => {
+        setTimeout(() => {
             setAnimate(true); // Apply animation class
-            console.log('Animation re-enabled', animate);
         }, 0);
-    
-        return () => {
-            clearTimeout(timeout); // Clean up
-        };
+    }
+
+    React.useEffect(() => {    
+        resetAnimation();
     }, [title]);
 
     const handleChangeArt = (index: number) => {
+        resetAnimation();
         navigate(`/art/${ART_DATA[index].name.toLowerCase()}`);
     }
 
