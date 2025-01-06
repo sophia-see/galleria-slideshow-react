@@ -30,6 +30,11 @@
     line-height: 29px;
     letter-spacing: 0;
     color: vars.$black-1;
+
+    @media screen and (min-width: 768px) {
+        font-size: 56px;
+        line-height: 64px;
+    }
 }
 
 .art-artist {
@@ -54,6 +59,11 @@
     letter-spacing: 0;
     color: vars.$black-3;
     place-self: end;
+
+    @media screen and (min-width: 768px) {
+        font-size: 200px;
+        line-height: 150px;
+    }
 }
 
 // SLIDESHOW NAV
@@ -63,6 +73,10 @@
     line-height: auto;
     letter-spacing: 0;
     color: vars.$black-1;
+
+    @media screen and (min-width: 768px) {
+        font-size: 18px;
+    }
 }
 
 .slideshow-artist {
@@ -71,4 +85,8 @@
     letter-spacing: 0;
     color: vars.$black-1;
     opacity: 75.28%;
+
+    @media screen and (min-width: 768px) {
+        font-size: 13px;
+    }
 }

@@ -4,6 +4,7 @@ import data from '../../data.json';
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import { IoIosPause, IoIosPlay } from 'react-icons/io';
+import useDeviceSize from '../../hooks/useDeviceSize';
 
 interface SlideshowControlsProps {
     title: string;
@@ -16,10 +17,11 @@ interface SlideshowControlsProps {
 const ART_DATA = data;
 export default function SlideshowControls ({ title, artist, artIndex, isPaused, setIsPaused }: SlideshowControlsProps) {
     const navigate = useNavigate();
+    const {isMobile} = useDeviceSize();
     const isFirst = artIndex === 0;
     const isLast = artIndex === ART_DATA.length - 1;
     const [animate, setAnimate] = React.useState(false);
-
+    const iconSize = isMobile ? 16 : 24;
     const resetAnimation = () => {
         setAnimate(false); // Reset animation class
         setTimeout(() => {
@@ -52,12 +54,12 @@ export default function SlideshowControls ({ title, artist, artIndex, isPaused, 
                     <div className="slideshow-artist">{artist}</div>
                 </div>
                 <div className={`${styles.controls}`}>
-                    <button disabled={isFirst} onClick={() => handleChangeArt(artIndex - 1)}><RxTrackPrevious size={16}/></button>
+                    <button disabled={isFirst} onClick={() => handleChangeArt(artIndex - 1)}><RxTrackPrevious size={iconSize}/></button>
                     {isPaused 
-                        ? <button onClick={() => setIsPaused(false)}><IoIosPlay size={16}/></button>
-                        : <button onClick={() => setIsPaused(true)}><IoIosPause size={16}/></button>
+                        ? <button onClick={() => setIsPaused(false)}><IoIosPlay size={iconSize}/></button>
+                        : <button onClick={() => setIsPaused(true)}><IoIosPause size={iconSize}/></button>
                     }
-                    <button disabled={isLast} onClick={() => handleChangeArt(artIndex + 1)}><RxTrackNext  size={16}/></button>
+                    <button disabled={isLast} onClick={() => handleChangeArt(artIndex + 1)}><RxTrackNext  size={iconSize}/></button>
                 </div>
             </div>
             {renderLoad}

@@ -8,6 +8,12 @@
     letter-spacing: 1.93px;
     color: vars.$black-2;
     text-transform: uppercase;
+
+    @media screen and (min-width: 768px) {
+        font-size: 12px;
+        line-height: auto;
+        letter-spacing: 2.57px;
+    }
 }
 
 .source-btn {
@@ -44,24 +50,6 @@
     line-height: auto;
     letter-spacing: 2.14px;
     text-transform: uppercase;
-}
-
-.slideshow-control-btn {
-    width: 16.78px;
-    height: 16px;
-}
-
-.slideshow-control-btn.next {
-    background-image: url('assets/shared/icon-next-button.svg'); /* Path to your SVG file */
-    background-size: contain; /* Make sure the SVG scales correctly */
-    background-repeat: no-repeat; /* Prevent repeating the image */
-    background-position: center; /* Center the image */
-}
-
-.slideshow-control-btn.disabled svg {
-    width: 16.78px;
-    height: 16px;
-    color: red;
 }
 
 .close-btn {
