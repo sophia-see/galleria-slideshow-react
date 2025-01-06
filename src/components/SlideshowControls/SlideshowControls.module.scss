@@ -35,6 +35,10 @@
     animation: load 5s 1 linear forwards;
 }
 
+.loader.animate.paused::after {
+    animation-play-state: paused;
+}
+
 @keyframes load {
     0%   {right: 100%;}
     100% {right: 0;}
