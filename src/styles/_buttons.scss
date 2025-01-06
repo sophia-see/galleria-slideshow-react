@@ -36,6 +36,11 @@
     position: absolute;
     top: 16px;
     left: 16px;
+
+    @media screen and (min-width: 768px) {
+        top: unset;
+        bottom: 16px;
+    }
 }
 
 .view-btn-icon {

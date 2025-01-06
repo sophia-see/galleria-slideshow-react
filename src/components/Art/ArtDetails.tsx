@@ -28,28 +28,31 @@ export default function ArtDetails ({ art, setIsPaused }: ArtDetailsProps) {
     }
 
     return (
-        <div className={styles.slideshow}>
-            <div className={styles.container}>
-                <div className={styles.image_container}>
-                    <img className={styles.art_image} src={`.${artImage}`} alt={`image of ${art.name}`} />
-                    <div className="view-btn-container" onClick={onViewImage}>
-                        <img src="/assets/shared/icon-view-image.svg" alt="icon of view image" className='view-btn-icon'/>
-                        <div className={`view-btn-text`}>view image</div>
-                    </div>
+        <div className={styles.main_container}>
+            <div className={styles.slideshow_container}>
+                <div className={styles.head_container}>
+                    <div className={styles.image_container}>
+                        <img className={styles.art_image} src={`.${artImage}`} alt={`image of ${art.name}`} />
+                        <div className="view-btn-container" onClick={onViewImage}>
+                            <img src="/assets/shared/icon-view-image.svg" alt="icon of view image" className='view-btn-icon'/>
+                            <div className={`view-btn-text`}>view image</div>
+                        </div>
+                    
+                    </div>                        
                     <div className={styles.art_details}>
                         <div className={styles.art_texts}>
                             <div className="art-title">{name}</div>
                             <div className="art-artist">{artist.name}</div>                        
                         </div>
                         <img className={styles.artist_image} src={`.${artist.image}`} alt={`image of ${art.artist.name}`} />
-                        <div className={styles.description_container}>
-                            <div className={styles.content}>
-                                <div className={`art-year`}>{year}</div>
-                                <div className={styles.bottom_content}>
-                                    <div className={`art-description`}>{description}</div>          
-                                    <div className={`source-btn ${styles.btn}`}>go to source</div>                                  
-                                </div>
-                            </div>
+                    </div>     
+                </div>                    
+                <div className={styles.description_container}>
+                    <div className={styles.content}>
+                        <div className={`art-year`}>{year}</div>
+                        <div className={styles.bottom_content}>
+                            <div className={`art-description`}>{description}</div>          
+                            <div className={`source-btn ${styles.btn}`}>go to source</div>                                  
                         </div>
                     </div>
                 </div>
