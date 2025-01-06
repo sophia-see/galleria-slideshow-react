@@ -23,6 +23,7 @@ export default function useDeviceSize() {
     return {
         isMobile: viewportSize.width < 768,
         isTablet: viewportSize.width < 1024,
-        isDesktop: viewportSize.width >= 1024,
+        isDesktop: viewportSize.width < 1300,
+        isLargeDesktop: viewportSize.width >= 1300,
     }
 }

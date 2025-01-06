@@ -28,6 +28,7 @@
     width: 327px; /* Full width of the grid column */
     position: relative;
     margin: 0 auto 20px;
+    break-inside: avoid;
     
     @media screen and (min-width: 768px) {
         width: 324px;
