@@ -2,8 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import data from '../../data.json';
 import styles from './Home.module.scss';
 import React from 'react';
-import useDeviceSize from '../../hooks/useDeviceSize';
-
 const ART_DATA = data;
 export default function Home () {
     const navigate = useNavigate();

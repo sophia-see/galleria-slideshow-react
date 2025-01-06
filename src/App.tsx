@@ -1,4 +1,3 @@
-import { RxTrackNext } from 'react-icons/rx'
 import Header from './components/Header/Header'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './components/Home/Home'

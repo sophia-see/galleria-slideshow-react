@@ -1,5 +1,4 @@
 import SlideshowControls from '../SlideshowControls/SlideshowControls';
-import styles from './Art.module.scss';
 import data from '../../data.json';
 import { useNavigate, useParams } from 'react-router-dom';
 import React from 'react';
