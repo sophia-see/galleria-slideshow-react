@@ -48,6 +48,14 @@
     padding: 0;
 }
 
+.art_card:hover {
+    cursor: pointer;
+}
+
+.active_img {
+    opacity: 0.5;
+}
+
 .art_details {
     @include mixins.flex-column(start, start, 7px);
     position: absolute;

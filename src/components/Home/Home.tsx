@@ -8,16 +8,21 @@ const ART_DATA = data;
 export default function Home () {
     const navigate = useNavigate();
     const galleryRef = React.useRef(null);
+    const [hoveredCard, setHoveredCard] = React.useState<number | null>(null);
 
+    React.useEffect(() => {
+        setHoveredCard(null)
+    }, []);
     const handleClickArt = (name: string) => {
         navigate(`/art/${name.toLowerCase()}`);
     }
 
-    const renderArt = ART_DATA.map((art) => {
+    const renderArt = ART_DATA.map((art, index) => {
+        const isActive = hoveredCard === index;
         return (
             <>
-                <div className={`card ${styles.art_card}`} onClick={() => handleClickArt(art.name)}>
-                    <img src={art.images.thumbnail} alt={`image of ${art.name}`} />
+                <div className={`card ${styles.art_card}`} onClick={() => handleClickArt(art.name)} onMouseEnter={() => setHoveredCard(index)} onMouseLeave={() => setHoveredCard(null)} key={art.name}>
+                    <img src={art.images.thumbnail} className={isActive ? styles.active_img : ""} alt={`image of ${art.name}`} />
                     <div className={styles.art_details}>
                         <div className="card-title">{art.name}</div>
                         <div className="card-artist">{art.artist.name}</div>
