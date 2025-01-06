@@ -1,0 +1,70 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as mixins;
+
+.container {
+    @include mixins.flex-column(start, start);
+    flex: 1; 
+    margin: 0 auto;
+    padding: 24px;
+    width: fit-content;
+    overflow: auto;
+    max-height: calc(100% - 175px);
+}
+
+.image_container {
+    width: 100%;
+    position: relative;
+}
+
+.art_image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.art_details {
+    @include mixins.flex-column(start, start, 8px);
+    position: absolute;
+    top: 70%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.art_texts {
+    padding: 24px;
+    width: 280px;
+    background-color: vars.$white-1;
+
+}
+
+.artist_image {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    margin-left: 16px;
+}
+
+.description_container {
+    position: relative;
+    width: 100%;
+}
+
+.content {
+    @include mixins.flex-column(start, start, 0px);
+    position: absolute;
+    left: 0;
+    top: -30px;
+    width: 100%;
+}
+
+.bottom_content {
+    position: absolute;
+    top: 75px;
+}
+
+.btn {
+    padding: 68px 0;
+}
+

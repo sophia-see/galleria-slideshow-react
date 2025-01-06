@@ -3,6 +3,7 @@ import styles from './Art.module.scss';
 import data from '../../data.json';
 import { useNavigate, useParams } from 'react-router-dom';
 import React from 'react';
+import ArtDetails from './ArtDetails';
 
 const ART_DATA = data;
 export default function Art () {
@@ -23,6 +24,7 @@ export default function Art () {
 
     return (
         <>
+            <ArtDetails art={art} />
             <SlideshowControls title={art?.name as string} artist={art?.artist.name as string} artIndex={artIndex}/>
         </>
     )

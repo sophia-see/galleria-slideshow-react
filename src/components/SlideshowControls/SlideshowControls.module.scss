@@ -9,6 +9,8 @@
     left: 0;
     border-top: 1px solid vars.$black-3;
     padding: 17px 24px;
+    z-index: 1;
+    background-color: vars.$white-1;
 }
 
 .controls {
