@@ -7,7 +7,7 @@ interface ArtDetailsProps {
     setIsPaused: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export default function ArtDetails ({ art, setIsPaused }: ArtDetailsProps) {
-    const { name, artist, year, images, description } = art;
+    const { name, artist, year, images, description, source } = art;
     const { isMobile } = useDeviceSize();
     const [isModalOpen, setIsModalOpen] = React.useState(false);
     const artImage = isMobile ? images.hero.small : images.hero.large;
@@ -25,6 +25,10 @@ export default function ArtDetails ({ art, setIsPaused }: ArtDetailsProps) {
     const onCloseImage = () => {
         setIsModalOpen(false);
         setIsPaused(false);
+    }
+
+    const handleClickSource = () => {
+        window.open(source, '_blank');
     }
 
     return (
@@ -52,7 +56,7 @@ export default function ArtDetails ({ art, setIsPaused }: ArtDetailsProps) {
                         <div className={`art-year`}>{year}</div>
                         <div className={styles.bottom_content}>
                             <div className={`art-description`}>{description}</div>          
-                            <div className={`source-btn ${styles.btn}`}>go to source</div>                                  
+                            <div className={`source-btn ${styles.btn}`} onClick={handleClickSource}>go to source</div>                                  
                         </div>
                     </div>
                 </div>

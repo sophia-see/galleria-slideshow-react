@@ -54,12 +54,12 @@ export default function SlideshowControls ({ title, artist, artIndex, isPaused, 
                     <div className="slideshow-artist">{artist}</div>
                 </div>
                 <div className={`${styles.controls}`}>
-                    <button disabled={isFirst} onClick={() => handleChangeArt(artIndex - 1)}><RxTrackPrevious size={iconSize}/></button>
+                    <button disabled={isFirst} onClick={() => handleChangeArt(artIndex - 1)}><RxTrackPrevious className={styles.control_btn} size={iconSize}/></button>
                     {isPaused 
-                        ? <button onClick={() => setIsPaused(false)}><IoIosPlay size={iconSize}/></button>
-                        : <button onClick={() => setIsPaused(true)}><IoIosPause size={iconSize}/></button>
+                        ? <button onClick={() => setIsPaused(false)}><IoIosPlay className={styles.control_btn} size={iconSize}/></button>
+                        : <button onClick={() => setIsPaused(true)}><IoIosPause className={styles.control_btn} size={iconSize}/></button>
                     }
-                    <button disabled={isLast} onClick={() => handleChangeArt(artIndex + 1)}><RxTrackNext  size={iconSize}/></button>
+                    <button disabled={isLast} onClick={() => handleChangeArt(artIndex + 1)}><RxTrackNext className={styles.control_btn}  size={iconSize}/></button>
                 </div>
             </div>
             {renderLoad}

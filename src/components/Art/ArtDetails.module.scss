@@ -187,9 +187,13 @@
     @include mixins.flex-column(end, center, 38px);
     padding: 24px;
     width: 100%;
+    max-height: 80%;
 }
 
 .art_gallery {
-    height: 100%;
-    width: 100%;
+    max-width: 100%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    margin: auto;
 }

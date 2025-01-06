@@ -31,21 +31,33 @@
     text-transform: uppercase;
 }
 
+.source-btn:hover {
+    cursor: pointer;
+    color: vars.$black-1;
+}
+
 .view-btn-container {
     display: flex;
     align-items: center;
     gap: 14px;
     padding: 14px 16px;
-    background-color: vars.$black-1;
-    opacity: 75.46%;
+    background-color: hsla(0, 0%, 0%, 0.75);
     position: absolute;
     top: 16px;
     left: 16px;
+    color: vars.$white-1;
+
 
     @media screen and (min-width: 768px) {
         top: unset;
         bottom: 16px;
     }
+}
+
+.view-btn-container:hover {
+    cursor: pointer;
+    background-color: vars.$white-3;
+    color: vars.$white-1;
 }
 
 .view-btn-icon {
@@ -54,7 +66,6 @@
 }
 
 .view-btn-text {
-    color: vars.$white-1;
     font-weight: bold;
     font-size: 10px;
     line-height: auto;
@@ -69,4 +80,9 @@
     letter-spacing: 3px;
     color: vars.$white-1;
     text-transform: uppercase;
+}
+
+.close-btn:hover {
+    cursor: pointer;
+    color: vars.$white-3;
 }
