@@ -34,15 +34,18 @@ export default function SlideshowControls ({ title, artist, artIndex }: Slidesho
     }
 
     return (
-        <div className={styles.container}>
-            <div className={styles.art_details}>
-                <div className="slideshow-title">{title}</div>
-                <div className="slideshow-artist">{artist}</div>
+        <div className={styles.slideshow_controls}>
+            <div className={`${styles.container}`}>
+                <div className={styles.art_details}>
+                    <div className="slideshow-title">{title}</div>
+                    <div className="slideshow-artist">{artist}</div>
+                </div>
+                <div className={`${styles.controls}`}>
+                    <button disabled={isFirst} onClick={() => handleChangeArt(artIndex - 1)}><RxTrackPrevious size={16}/></button>
+                    <button disabled={isLast} onClick={() => handleChangeArt(artIndex + 1)}><RxTrackNext  size={16}/></button>
+                </div>
             </div>
-            <div className={`${styles.controls} ${animate ? styles.animate : ''}`}>
-                <button disabled={isFirst} onClick={() => handleChangeArt(artIndex - 1)}><RxTrackPrevious size={16}/></button>
-                <button disabled={isLast} onClick={() => handleChangeArt(artIndex + 1)}><RxTrackNext  size={16}/></button>
-            </div>
+            {animate && <div className={`${styles.loader} ${animate ? styles.animate : ''}`}></div>}
         </div>
     )
 }

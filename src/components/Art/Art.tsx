@@ -11,10 +11,11 @@ export default function Art () {
     const { id } = useParams();
     const artIndex = ART_DATA.findIndex((art) => art.name.toLowerCase() === decodeURI(id ?? "")) ?? 0;
     const art = ART_DATA[artIndex];
+    const isLastArt = artIndex === ART_DATA.length - 1;
 
     React.useEffect(() => {
         const timeout = setTimeout(() => {
-            navigate(`/art/${ART_DATA[(artIndex + 1) % ART_DATA.length].name.toLowerCase()}`);
+            isLastArt ? null : navigate(`/art/${ART_DATA[(artIndex + 1) % ART_DATA.length].name.toLowerCase()}`);
         }, 5000);
 
         return () => {

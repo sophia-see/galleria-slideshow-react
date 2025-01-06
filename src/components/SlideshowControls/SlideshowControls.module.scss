@@ -1,8 +1,7 @@
 @use '../../styles/variables' as vars;
 @use '../../styles/mixins' as mixins;
 
-.container {
-    @include mixins.flex-row(center, space-between, 0);
+.slideshow_controls {
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -13,11 +12,16 @@
     background-color: vars.$white-1;
 }
 
+.container {
+    @include mixins.flex-row(center, space-between, 0);
+    width: 100%;
+}
+
 .controls {
     @include mixins.flex-row(start, start, 23px);
 }
 
-.controls::after {
+.loader::after {
     display: block;
     content: '';
     border-top: 1px solid vars.$black-1;
@@ -27,8 +31,8 @@
     top: 0;
 }
 
-.controls.animate::after {
-    animation: load 5s infinite linear;
+.loader.animate::after {
+    animation: load 5s 1 linear forwards;
 }
 
 @keyframes load {

@@ -12,6 +12,10 @@ export default function ArtDetails ({ art }: ArtDetailsProps) {
     const artImage = isMobile ? images.hero.small : images.hero.large;
     const artGallery = images.gallery;
 
+    React.useEffect(() => {
+        setIsModalOpen(false)
+    }, [name]);
+
     return (
         <div className={styles.slideshow}>
             <div className={styles.container}>
