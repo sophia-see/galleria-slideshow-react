@@ -5,6 +5,7 @@
     @include mixins.flex-column(start, start, 24px);
     margin: 24px auto;
     width: fit-content;
+    padding-bottom: 3rem;
 }
 
 .art_card {
