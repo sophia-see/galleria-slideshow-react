@@ -8,12 +8,17 @@
     letter-spacing: 1.93px;
     color: vars.$black-2;
     text-transform: uppercase;
+    cursor: pointer;
 
     @media screen and (min-width: 768px) {
         font-size: 12px;
         line-height: auto;
         letter-spacing: 2.57px;
     }
+}
+
+.slideshow-btn:hover {
+    color: vars.$black-1;
 }
 
 .source-btn {
