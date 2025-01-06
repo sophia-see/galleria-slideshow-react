@@ -1,26 +1,2 @@
 @use '../../styles/variables' as vars;
 @use '../../styles/mixins' as mixins;
-
-header, nav, ul, li {
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    color: vars.$black-1;
-    border-bottom: 1px solid vars.$black-3;
-}
-
-nav {
-    @include mixins.flex-row(center, space-between, 0);
-    padding: 24px;
-}
-
-nav img {
-    width: 113px;
-    height: 32px;
-}
-
-nav img:hover {
-    cursor: pointer;
-}
